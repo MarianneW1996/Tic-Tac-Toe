@@ -45,3 +45,16 @@ def pc_move(game_board):
     game_board = move(game_board, "x", position_pc)
     return game_board
 print(pc_move(game_board))
+
+def tictactoe_1d(game_board):
+    status = evaluate(game_board)
+    while status == "-":
+        player_move(game_board)
+        status = evaluate(game_board)
+        if status == "-":
+            player_move(game_board)
+            print(game_board)
+        else:
+            break
+    return(evaluate(game_board))
+print(tictactoe_1d(game_board))
