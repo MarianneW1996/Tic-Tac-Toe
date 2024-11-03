@@ -1,5 +1,9 @@
 game_board = "--------------------"
-def evaluate (game_status):
+print("gameboard: ", game_board, "\nYour sign: o\nPC sign: x")
+# player: "o"
+# pc: "x"
+
+def evaluate(game_status):
     # "x" – The player who uses crosses (Xs) has won (the board contains xxx)
     # "o" – The player who uses noughts (Os) has won (the board contains ooo)
     # "!" – Draw (the board is full but nobody has won)
