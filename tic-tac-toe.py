@@ -39,7 +39,6 @@ def player_move(game_board):
         else:
             game_board = move(game_board, "o", position_input_player)
             return game_board
-print(player_move(game_board))
 
 from random import randrange
 def pc_move(game_board):
@@ -48,22 +47,24 @@ def pc_move(game_board):
         position_pc = randrange(1, 21)
     game_board = move(game_board, "x", position_pc)
     return game_board
-print(pc_move(game_board))
 
 def tictactoe_1d(game_board):
     status = evaluate(game_board)
     while status == "-":
         game_board = player_move(game_board)
         status = evaluate(game_board)
-        if status == "-":
-            game_board = pc_move(game_board)
-            print(game_board)
-            status = evaluate(game_board)
+        if status != "-":
+            print("Current game board: ", game_board)
+            break
+        game_board = pc_move(game_board)
+        print("Current game board: ", game_board)
+        status = evaluate(game_board)
     return status
 
-if tictactoe_1d(game_board) == "x":
+result = tictactoe_1d(game_board)
+if result == "x":
     print("PC won!")
-elif tictactoe_1d(game_board) == "o":
+elif result == "o":
     print("Conglatulations, you won! :)")
-elif tictactoe_1d(game_board) == "!":
+elif result == "!":
     print("Draw!")
