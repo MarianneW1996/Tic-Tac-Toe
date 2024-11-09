@@ -17,8 +17,6 @@ def evaluate(game_status):
         return "-"
     else:
         return "!"
-result = evaluate(game_board)
-
 
 def move(board, mark, position):
     # Returns the game board with the given mark in the given position.
@@ -26,7 +24,6 @@ def move(board, mark, position):
     second_part_board = board[position:]
     new_board = first_part_board+mark+second_part_board
     return new_board
-
 
 def player_move(game_board):
     position_input_player = 0
